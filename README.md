@@ -17,10 +17,11 @@
 
 ---
 
-### Machine Learning Fundamentals Course
+### Machine Learning Fundamentals
 
 * [https://www.dataquest.io/course/machine-learning-fundamentals](https://www.dataquest.io/course/machine-learning-fundamentals)
-* 
+* [mission1. Introduction To K-Nearest Neighbors](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/machine-learning-fundamentals/mission1.asc)
+* [mission2. todo]
 
 
 ### Machine Learning in Python: Beginner
@@ -38,6 +39,3 @@
 ### Decision Trees
 
 * [https://www.dataquest.io/course/decision-trees](https://www.dataquest.io/course/decision-trees)
-
-
-

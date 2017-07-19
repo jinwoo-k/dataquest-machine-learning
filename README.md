@@ -14,8 +14,8 @@
 
 * [https://www.dataquest.io/course/machine-learning-fundamentals](https://www.dataquest.io/course/machine-learning-fundamentals)
 * [mission1. Introduction To K-Nearest Neighbors](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/machine-learning-fundamentals/mission1.asc)
-* [mission2. Evaluating Model Performance]
-* [mission3. Multivariate K-Nearest Neighbors]
+* [mission2. Evaluating Model Performance](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/machine-learning-fundamentals/mission2.asc)
+* [mission3. Multivariate K-Nearest Neighbors](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/machine-learning-fundamentals/mission3.asc)
 
 
 ### Machine Learning in Python: Beginner

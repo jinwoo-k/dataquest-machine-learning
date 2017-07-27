@@ -1,0 +1,29 @@
+== Hyperparameter Optimization
+
+ * 이전까지 장에서는 속성을 늘리는 것으로 예측 정확도를 향상 시키는 방법을 학습
+ * 이번장에서는 이웃의 수를 적절하게 설정하는 방법에 대해서 학습 (Hyperparameter Optimization)
+ * 모델에서 Feature 를 다양하게 하면 모델이 사용하는 데이터에 영향을 끼치게 됨 (?)
+ * 하지만 이웃 k 값을 수정하는것은 데이터와 독립적으로 모델의 동작에 영향을 줌
+ * 이렇게 사용되는 데이터와 관련 없이 모델의 동작 및 성능에 영향을 미치는 값을 하이퍼 매개변수라 한다.
+ * 최적의 하이퍼 매개변수를 찾는 과정을 HyperParameter Optimization 이라고 함
+ * 일반적인 최적화 기법에는 Grid Search 가 있음 (가장 낮은 오류값을 가지는 파라미터를 선택)
+ * Feature 를 조절하는것에 의해 최적 k 값이 변경됨
+
+== pandas/numpy 활용 주요 function
+ * function
+   ** 작업
+     *** hyper_params = [1, 2, 3, 4, 5]
+     *** hyper_params = [x for x in range(1, 21)] : 1 ~ 20 의 배열? 을 만듬
+     *** for hp in hyper_params: for 용법
+     *** for k,mse in enumerate(three_mse_values):
+     *** enumerate(list) : index(0 부터) 와 list 값 pair 로 만들어 위에서 k, mse 처럼 받을 수 있도록 변환
+     *** dict() : Dictionary 기능으로 key, value 형태 값을 처리 예) a = dict(), a[5] = "xxx" 인 경우 5: xxx 를 얻을 수 있음
+     *** list() 생성 후 append 명령어로 추가 가능
+
+== matplotlib.pyplot lib
+ * 라이브러리 사용 선언
+   ** import matplotlib.pyplot as plt
+      %matplotlib inline
+ * function
+   ** 작업
+     *** plt.scatter(x-axis, y-axis) : 점 plot

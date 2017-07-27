@@ -27,3 +27,17 @@
  * function
    ** 작업
      *** plt.scatter(x-axis, y-axis) : 점 plot
+
+== sklearn lib (리뷰)
+ * 라이브러리 사용 선언
+   ** from sklearn.neighbors import KNeighborsRegressor
+   ** from sklearn.metrics import mean_squared_error
+ * function
+   ** KNeighborsRegressor 사용 순서
+     *** 알고리즘 정의 : 예) knn = KNeighborsRegressor(n_neighbors=5, algorithm='brute', metric='euclidean')
+     **** n_neighbors : k-nearest 에서의 k 로 학습에 사용할 가장 가까운 이웃의 수
+     **** algorithm : {‘auto’, ‘ball_tree’, ‘kd_tree’, ‘brute’}
+     **** metric : {'minkowski', 'euclidean'}
+     *** 학습 셋 정의 : 예) knn.fit(train_df[train_columns], train_df['price'])
+     *** 테스트 셋 정의 및 예측 : 예) predictions = knn.predict(test_df[train_columns])
+   *** mean_squared_error(정답, 예측) : 예) mean_squared_error(test_df['price'], predictions)

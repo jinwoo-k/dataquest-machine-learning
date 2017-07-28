@@ -17,6 +17,7 @@
 * [mission2. Evaluating Model Performance](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/machine-learning-fundamentals/mission2.asc)
 * [mission3. Multivariate K-Nearest Neighbors](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/machine-learning-fundamentals/mission3.asc)
 * [mission4. Hyperparameter Optimization](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/machine-learning-fundamentals/mission4.asc)
+* [mission5. Cross Validation](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/machine-learning-fundamentals/mission5.asc)
 * [mission6. Guided Project: Predicting Car Prices](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/machine-learning-fundamentals/mission6.asc)
 
 ### Machine Learning in Python: Beginner

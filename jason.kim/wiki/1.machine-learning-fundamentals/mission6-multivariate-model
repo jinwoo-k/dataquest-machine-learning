@@ -1,0 +1,42 @@
+['wheel_base' 'length'] 9 7736.77012645
+['length' 'width'] 9 6915.02281943
+['width' 'height'] 9 5498.39385569
+['height' 'curb_weight'] 9 5735.49651229
+['curb_weight' 'engine_size'] 9 3953.26592887
+['engine_size' 'bore'] 9 3564.13320634
+['bore' 'stroke'] 9 10897.988362
+['stroke' 'compression_ratio'] 9 7401.59760674
+['compression_ratio' 'horsepower'] 9 4184.25575481
+['horsepower' 'peak_rpm'] 9 4699.14709845
+['peak_rpm' 'city_mpg'] 9 5085.9447865
+['city_mpg' 'highway_mpg'] 9 4554.89259011
+['wheel_base' 'length' 'width'] 9 7845.47895613
+['length' 'width' 'height'] 9 5920.55668969
+['width' 'height' 'curb_weight'] 9 5486.69611517
+['height' 'curb_weight' 'engine_size'] 9 4348.04674464
+['curb_weight' 'engine_size' 'bore'] 9 4041.46218977
+['engine_size' 'bore' 'stroke'] 9 4591.18536539
+['bore' 'stroke' 'compression_ratio'] 9 9292.37914451
+['stroke' 'compression_ratio' 'horsepower'] 9 4211.2049144
+['compression_ratio' 'horsepower' 'peak_rpm'] 9 4411.61407308
+['horsepower' 'peak_rpm' 'city_mpg'] 9 4362.62102021
+['peak_rpm' 'city_mpg' 'highway_mpg'] 9 3945.30578
+['wheel_base' 'length' 'width' 'height'] 9 6835.06835346
+['length' 'width' 'height' 'curb_weight'] 9 5782.95573866
+['width' 'height' 'curb_weight' 'engine_size'] 9 4091.59922416
+['height' 'curb_weight' 'engine_size' 'bore'] 9 4210.90524708
+['curb_weight' 'engine_size' 'bore' 'stroke'] 9 4686.72214552
+['engine_size' 'bore' 'stroke' 'compression_ratio'] 9 5268.0485571
+['bore' 'stroke' 'compression_ratio' 'horsepower'] 9 5542.82177903
+['stroke' 'compression_ratio' 'horsepower' 'peak_rpm'] 9 4580.42591349
+['compression_ratio' 'horsepower' 'peak_rpm' 'city_mpg'] 9 4247.09438901
+['horsepower' 'peak_rpm' 'city_mpg' 'highway_mpg'] 9 3612.89634018
+['wheel_base' 'length' 'width' 'height' 'curb_weight'] 9 6568.91457056
+['length' 'width' 'height' 'curb_weight' 'engine_size'] 9 4375.51025713
+['width' 'height' 'curb_weight' 'engine_size' 'bore'] 9 4302.43617308
+['height' 'curb_weight' 'engine_size' 'bore' 'stroke'] 9 4328.09830306
+['curb_weight' 'engine_size' 'bore' 'stroke' 'compression_ratio'] 9 4534.7503071
+['engine_size' 'bore' 'stroke' 'compression_ratio' 'horsepower'] 9 3761.67781412
+['bore' 'stroke' 'compression_ratio' 'horsepower' 'peak_rpm'] 9 5505.05693404
+['stroke' 'compression_ratio' 'horsepower' 'peak_rpm' 'city_mpg'] 9 4442.22691421
+['compression_ratio' 'horsepower' 'peak_rpm' 'city_mpg' 'highway_mpg'] 9 3708.52994023

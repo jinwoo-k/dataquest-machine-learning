@@ -1,0 +1,33 @@
+== Understanding Linear and Nonlinear Functions
+
+ * 데이터에 의존적인 KNN 모델로는 쉬운 개념이나, 계산집약적이기 때문에 많은 데이터에 적용하기 어려우며 비효율적임
+ * 수학적 함수를 이요한 기계 학습에 대해 학습
+ * 미적분의 핵심 아이디어를 이해하고, 미적분을 통해 수학 함수가 어떻게 작동하는지 이해
+ * Linear Function(1차함수-선형)를 통한 기하학적인 의미를 확인
+ * 기울기와 Y 절편이 나타내는 의미
+ * 두 점 (x1, y1) (x2, y2) 을 활용한 기울기 구하는 공식 : (y2 - y1) / (x2 - x1)
+ * Non Linear Function
+ * Secant Line
+   ** 비선형 곡선에서 곡선상의 두 점을 잇는 라인
+   ** 간격이 작을수록 곡선과 부드럽게 교차하며 클수록 곡선으로 부터 벗어나게 됨
+ * Tangent Line
+   ** x1 == x2 인 경우 기울기를 구할 수 없음
+   ** 비선형 곡선에서의 접선을 나타냄
+   ** Secant 라인 중 두 값이 같은 케이스를 말함
+
+== 활용 주요 function
+ * 라이브러리 사용 선언
+   ** import pandas as pd
+   ** import numpy as np
+   ** import matplotlib.pyplot as plt
+   ** import seaborn
+     *** Seaborn은 matplotlib을 기반으로 다양한 색상 테마와 통계용 챠트 등의 기능을 추가한 시각화 패키지
+     *** matplotlib 패키지에 의존하며 통계 기능의 경우에는 statsmodels 패키지에 의존
+     *** 참고 : http://stanford.edu/~mwaskom/software/seaborn/index.html
+ * function
+   ** np.linspace : 시작점과 끝점 사이에 균등하게 정해진 값들을 생성해 줌
+   ** plot 함수 예제
+     *** plt.plot(x,y)
+     *** plt.plot(x, x*m + b, c='green') : m, b 는 상수
+   ** seaborn.set(style='darkgrid')
+

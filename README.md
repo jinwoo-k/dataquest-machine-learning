@@ -25,7 +25,7 @@
 * [https://www.dataquest.io/course/calculus-for-machine-learning](https://www.dataquest.io/course/calculus-for-machine-learning)
 * [mission1. Understanding Linear And Nonlinear Functions]()
 * [mission2. Understanding Limits]()
-* [mission3. Finding Extreme Points]()
+* [mission3. Finding Extreme Points](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/calculus-for-machine-learning/mission3.asc)
 
 ### Machine Learning in Python: Beginner
 

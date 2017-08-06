@@ -1,0 +1,20 @@
+== Understanding Limits
+
+ * 비선형 곡선을 가지는 방정식으로 부터 특정 값에서의 기울기를 구하는 방법
+   ** 기울기 m = (f(x2) - f(x1)) / (x2 - x1) 을 이용
+ * limit 에 대한 정의 : 입력값이 특정값(a)에 한없이 접근할때 a 값을 limit 라고 함
+ * Defined Limit 와 Undefined Limit
+   ** 정의되지 않은 Limit 을 정의된 Limit 으로 변경하여 처리
+ * limit 를 이용한 비선형 곡선의 접선을 구하는 방법
+ * Sympy 에 대한 설명
+   ** 참고 : https://datascienceschool.net/view-notebook/5f5f4a966f9042efa43d711008df9c0b/
+ * Sympy 를 이용한 limit 구하기
+ * 대수연산과 limit 식 변환
+   ** lim[c*f(x)] = c * lim[f(x)]
+   ** lim[a*(x**2)] + lim[b*x] + lim[c] = a * lim[x**2] + b * lim[x] + c * lim[1]
+      = lim[ a*(x**2) + b*x + c ]
+
+== 활용 주요 function
+ * function
+   ** sympy.simpols : sympy 에서 대수기호를 사용하기 위한 함수
+   ** sympy.limit : 파라미터로는 리밋함수값, 입력변수, 한계값(Limit)

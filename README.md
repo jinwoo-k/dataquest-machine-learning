@@ -23,9 +23,19 @@
 ### calculus-for-machine-learning
 
 * [https://www.dataquest.io/course/calculus-for-machine-learning](https://www.dataquest.io/course/calculus-for-machine-learning)
-* [mission1. Understanding Linear And Nonlinear Functions]()
-* [mission2. Understanding Limits]()
-* [mission3. Finding Extreme Points]()
+* [mission1. Understanding Linear And Nonlinear Functions](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/calculus-for-machine-learning/mission1.asc)
+* [mission2. Understanding Limits](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/calculus-for-machine-learning/mission2.asc)
+* [mission3. Finding Extreme Points](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/calculus-for-machine-learning/mission3.asc)
+
+### linear-algebra-for-machine-learning
+
+* [https://www.dataquest.io/course/linear-algebra-for-machine-learning](https://www.dataquest.io/course/linear-algebra-for-machine-learning)
+* [mission1. Linear Systems](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/linear-algebra-for-machine-learning/mission1.asc)
+* [mission2. Vectors](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/linear-algebra-for-machine-learning/mission2.asc)
+* [mission3. Matrix Algebra](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/linear-algebra-for-machine-learning/mission3.asc)
+* [mission4. Solution Sets](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/linear-algebra-for-machine-learning/mission4.asc)
+
+
 
 ### Machine Learning in Python: Beginner
 

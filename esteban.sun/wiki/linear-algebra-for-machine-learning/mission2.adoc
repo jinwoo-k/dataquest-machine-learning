@@ -1,0 +1,52 @@
+== Vectors
+
+ * From Matrices To Vectors
+   ** Matrices 행렬 : 행과 열로 구분 가능
+   ** 행 열 각각을 행벡터, 열벡터라고 함
+ * Geometric Intuition Of Vectors
+   ** 벡터 : 방향과 크기를 가짐 (화살표로 표시)
+ * Vector Operations
+   ** 벡터 합 : 행렬의 행과 마찬가지로 벡터도 더하거나 빼는게 가능함
+   ** 벡터를 더하거나 뺄 경우 같은 위치의 요소끼리 더해지거나 빼져서 새로운 벡터가 생성됨
+ * Scaling Vectors
+   ** 벡터 곱 : 상수를 벡터의 각각의 값에 곱해줌
+ * Vectors In NumPy
+   ** Numpy 에서의 Vector 에 대한 용법 : np.asarray 로 array 생성 및 산술 연산 학습
+ * Dot Product (내적)
+   ** 벡터의 내적 결과는 벡터가 아닌 스칼라임
+   ** Scala product 라고도 함
+   ** image:https://s3.amazonaws.com/dq-content/161/dot_product.svg[]
+ * Linear Combination
+ * Linear Combination And Vectors
+   ** 선형 조합과 벡터를 이용하여 전장에서 배웠던 가우스 소거법을 변형해 봄
+ * The Matrix Equation
+   ** 행렬방정식 : 행렬 및 벡터만을 사용하는 선형 시스템의 표현
+   ** A x→ = b→
+   ** A 는 계수행렬, x 는 solution vector, b 는 상수
+   ** 행렬방정식을 계산하기 위해 다음 미션에서 배울 항목
+      *** 행렬을 결합 할 수있는 방법을 설명하는 규칙
+      *** 행렬을 벡터로 곱셈하는 법
+      *** 가우스 제거를 사용하지 않고 솔루션 벡터 x를 계산하는 방법
+
+== 활용 주요 function
+ * 라이브러리 사용 선언
+   ** import numpy as np
+   ** import matplotlib.pyplot as plt
+ * function
+   ** plt.axhline(0, c='black', lw=0.5) : 수평선(X축에 평행)을 0.5 두께로 검정색으로 그린다.
+   ** plt.axvline(0, c='black', lw=0.5) : 수직선(Y축에 평행)을 0.5 두께로 검정색으로 그린다.
+   ** plt.xlim(-3,3) : x 좌표의 한계를 -3 ~ 3 으로 설정한다.
+   ** plt.ylim(-4,4) : y 좌표의 한계를 -4 ~ 4 로 설정한다.
+   ** plt.quiver(0, 0, 1, 2, angles='xy', scale_units='xy', scale=1, color='gold')
+   ** numpy.dot() : 벡터의 내적을 구하는 함수, 인자는 두개의 벡터를 받고 하나는 행벡터, 하나는 열벡터로 입력한다.
+   ** array 다루기
+      *** 단일배열에서의 array (인덱스는 0 부터)
+         **** array[:] : array 의 모든 성분 추출
+         **** array[값1] : 값1 에 해당하는 인덱스의 값 추출
+         **** array[값1:값2] : 값1 에서 값2 이전까지의 값 추출
+         **** array[값1:값2] = 값3 : 값1 에서 값2 이전까지의 인덱스의 값으로 값3을 입력
+      *** 다차원 배열에서의 array
+         **** 다차원 배열에서의 , 은 행과 열을 구분하는 구분자로 사용됨
+         **** array[2,:] : 행의 인덱스가 2 인 모든 열을 추출
+         **** array[:,0] : 열의 인덱스가 0 인 모든 행의 값을 추출
+      *** 참고 : numpy 의 배열 관련 함수 (https://datascienceschool.net/view-notebook/17608f897087478bbeac096438c716f6/)

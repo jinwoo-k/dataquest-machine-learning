@@ -23,17 +23,17 @@
  * Matrix Inverse
    ** 계수행렬을 연산하여 단위행렬로 만드는 방법에 대한 학습
    ** 어떤 행렬에 역행렬을 곱하면 단위행렬로 만들 수 있음
-   ** determine or determinant : 행렬식, det(A) |A|
+   ** determine or determinant : 행렬식(판별식), det(A) |A|
    ** image:./images/image1.png[]
-   ** 행렬식이 0이 아닌지 여부는 연립방정식이 유일한 해를 갖는지를 결정
+   ** 행렬식(판별식)이 0이 아닌지 여부는 연립방정식이 유일한 해를 갖는지를 결정
  * Solving The Matrix Equation
    ** 행렬 방정식을 푸는 방법에 대한 학습
  * Determinant For Higher Dimensions
-   ** 좀 더 고차원의 행렬 방정식을 풀기 위한 행렬식 정의 방법 학습
+   ** 좀 더 고차원의 행렬 방정식을 풀기 위한 행렬식(판별식) 정의 방법 학습
    ** 고차원 행렬을 더 작은 행렬로 분리
    ** image:./images/image2.png[]
  * Matrix Inverse For Higher Dimensions
-   ** 이전장에서 배운 행렬식을 이용하여 역행렬을 구하는 방법을 학습
+   ** 이전장에서 배운 행렬식(판별식)을 이용하여 역행렬을 구하는 방법을 학습
    ** image:https://s3.amazonaws.com/dq-content/162/3d_matrix_inverse.svg[]
  * 참고
    ** http://judis.me/wordpress/2015/10/10/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98-note-18-properties-of-determinants/

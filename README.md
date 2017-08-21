@@ -38,8 +38,8 @@
 ### linear-regression-for-machine-learning
 
 * [https://www.dataquest.io/course/linear-regression-for-machine-learning](https://www.dataquest.io/course/linear-regression-for-machine-learning)
-* [mission1. The Linear Regression Model] (https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/4.linear-regression-for-machine-learning/mission1.asc)
-* [mission2. Feature Selection] (https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/4.linear-regression-for-machine-learning/mission2.asc)
+* [mission1. The Linear Regression Model](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/4.linear-regression-for-machine-learning/mission1.asc)
+* [mission2. Feature Selection](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/4.linear-regression-for-machine-learning/mission2.asc)
 
 ### Machine Learning in Python: Beginner
 

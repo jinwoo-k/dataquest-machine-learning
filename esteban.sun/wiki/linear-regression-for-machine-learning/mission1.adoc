@@ -1,0 +1,59 @@
+== The Linear Regression Model
+
+ * Instance Based Learning Vs. Model Based Learning
+   ** 선형 회귀 (linear regression) 및 로지스틱 회귀 (logistic regression)와 같은 매개 변수 기계 학습 방법에 대한 학습
+   ** knn 알고리즘과는 달리, 기계 학습 알고리즘의 Train 결과는 수학적 함수로 나타나는데 이를 모델이라 함
+   ** Instance-based learning : knn 알고리즘, 예측시 훈련셋에 의존, Feature 와 예측값간의 관계를 살펴보지 않고, 유클리드 거리 기반으로 처리
+      *** image:https://s3.amazonaws.com/dq-content/235/knn_complexity.svg[]
+   ** parametric machine learning
+      *** image:https://s3.amazonaws.com/dq-content/235/regression_complexity.svg[]
+
+ * Introduction To The Data
+   ** 아이오와주의 판매주택 예제로 학습
+   ** 각 속성에 따른 판매가에 미치는 영향 확인
+
+ * Simple Linear Regression
+   ** 단순 선형회기 부터 시작 (simple linear regression 부터)
+   ** y = a1 * x1 + a0
+   ** y 는 대상(예측하고자 하는 열), x1 은 모델에서 사용할 Feature 중 1, a0 와 a1 은 매개변수값
+   ** x, y 의 관계를 살펴보고 최적의 파라미터 찾기
+   ** image:https://s3.amazonaws.com/dq-content/235/simple_linear_regression.svg[]
+
+ * Least Squares
+   ** 두개의 열(컬럼)이 얼마나 상관관계가 있는지 확인하는 방법
+      *** Correlation Coefficient : 상관계수가 1에 가까울수록 상관 관계가 강함
+   ** Residual Sum Of Squares : RSS = 예측값과 실제값과의 차의 제곱들의 합
+   ** RSS 를 갯수로 나누면 MSE 가 됨
+
+ * Using Scikit-Learn To Train And Predict
+   ** Scikit 라이브러리를 이용하여 linear_model 을 선언하고 이를 이용하여 모델을 설정함
+   ** fit 를 이용하여 두 열간의 관계를 생성하면 coef_ 와 intercept_ 값을 얻을 수 있음
+   ** 이때 각각이 의미하는 값은 y = a1 * x + a0 방정식을 기준으로
+   ** a1 = coef_ , a0 = intercept_ 가 됨
+
+ * Making Predictions
+   ** 이전 단계에서 예측한 값에 대한 해석 : y = 116.86624683 * x + 5366.82171006
+   ** Gr Liv Area 와의 관계 이므로 지상 생활 공간의 증가에 따른 가격의 선형 모델이 됨
+   ** 테스트 셋에 대한 예측 수행 및 검증
+
+ * Multiple Linear Regression
+   ** 다중 선형 회귀
+   ** y = a0 + a1*x1 + a2*x2 + ... + an*xn
+
+== 활용 주요 function
+ * 라이브러리 사용 선언
+   ** import pandas as pd
+   ** import numpy as np
+   ** import matplotlib.pyplot as plt
+   ** from sklearn.metrics import mean_squared_error
+   ** from sklearn import linear_model
+ * function
+   ** pd.read_csv('AmesHousing.txt', delimiter="\t") : 파일로 부터 데이터를 읽어 dataFrame 을 생성
+   ** pd.dataframe.corr() : 파라미터의 열들간의 상관계수를 구함
+   ** linear_model.LinearRegression() : 선형회귀 객체 선언
+   ** linear_model.fit : 예측에 사용할 Feature들과 예측할 열을 파라미터로 전달하여 모델을 생성
+   ** linear_model.predict : 예측에 사용할 데이터 셋을 전달하여 예측값 생성
+   ** mean_squared_error(train_predictions, train['SalePrice']) : 두 값간의 평균 제곱 오차를 구함
+   ** fig = plt.figure(figsize=(30,45)) : plot 사이즈 선언
+   ** fig.add_subplot(3, 1, 1) : 선언된 figure 에 서브 플롯을 선언
+   ** train.plot(x="Garage Area", y="SalePrice", ax=ax1, kind="scatter")

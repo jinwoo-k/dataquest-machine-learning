@@ -8,7 +8,9 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.cross_validation import cross_val_score
 
 def transform_features():
-    return train
+    train_null_counts = train.isnull().sum()/len(train)
+    df_missing_values = train[train_null_counts[(train_null_counts>0.25)].index]
+    return train.drop(df_missing_values, axis=1).drop(train[['PID']], axis=1)
 
 def select_features():
     return train[['Gr Liv Area', 'SalePrice']]
@@ -19,22 +21,14 @@ def train_and_test():
         kf = KFold(len(test), fold, True, 1)
         knn = KNeighborsRegressor()
         mses = cross_val_score(knn, train[['Gr Liv Area']], train['SalePrice'], scoring="mean_squared_error", cv=kf)
-
-    rmses = [np.sqrt(np.absolute(mse)) for mse in mses]
+        rmses = [np.sqrt(np.absolute(mse)) for mse in mses]
+        print(rmses)
     return rmses
 
 data = pd.read_csv('AmesHousing.txt', delimiter="\t")
 train = data[0:1460]
 test = data[1460:]
 ```
- * Feature Engineering
-   **
-
- * Feature Selection
-   **
-
- * Train And Test
-   **
 
  * Next Steps
    ** Feature Engineering 에 대한 반복 작업 또는 Feature Engineering 에 대한 다른 접근법에 대한 학습 가능

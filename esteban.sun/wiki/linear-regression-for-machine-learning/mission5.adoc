@@ -1,0 +1,48 @@
+== Processing And Transforming Feature
+ * Introduction
+   ** 선형 회귀 모델에서 사용하기에 적합하지 않은 비 숫자형 데이터에 대한 가공 방법에 대한 학습
+   ** 예: 열이 숫자가 아닙니다 (예 : 텍스트를 사용하여 표시되는 구역 지정 코드)
+   ** 예: 열은 숫자이지만 서수는 아닙니다 (예 : 우편 번호)
+   ** 예: 열은 숫자이지만 대상 열과의 관계 유형 (예 : 연도 값)을 나타내지는 않습니다.
+
+ * Categorical Features
+   ** 카테고리형 속성 : 속성이 제한된 값들의 집합에 포함
+   ** 같은 속성을 가지는 데이터들을 같은 숫자 값으로 변형하여 활용 가능
+
+ * Dummy Coding
+   ** pandas 에서 제공하는 카테고리형 데이터 변환의 경우 변환된 숫자형 값이 선형 회귀에 사용하기에는 적합하지 않음
+   ** 의미가 없음예
+   ** 이를 해결하기 위해 Dummy Coding 기법을 사용함 (1~n 의 값이 아닌 0 또는 1 값을 가지도록)
+
+ * Transforming Improper Numerical Features
+   ** 숫자값을 가지지만 선형성을 가지지 않는 경우의 변환
+   ** 리모델링이나 증축 또는 빌드 년도에 대한 예
+   ** 건설후 언제 팔렸는지.. 지금부터 얼마전에 건설된건지에 대한 정보가 더 중요하므로 의미를 가지도록 가공
+
+ * Missing Values
+   ** 누락된 값이 있는 열에 대한 처리
+   ** 특정 열에 값이 누락된 경우 : 행 제거
+      *** 누락된 값이 포함된 행이 제거되어 모델링을 위한 깨끗한 데이터만 남게 됨
+      *** 데이터 셋이 줄어들게 되어 전반적인 예측 정확도가 떨어질 수 있음
+   ** 누락된 값을 대체
+      *** 나머지 모델의 값을 보면서 유사한 추정으로 대체
+      *** 접근 방식에 따라 잘못된 값이 들어갈 수 있어 오류 발생 가능성이 높아짐
+   ** 누락값을 포함할지 말지에 대한 판단은 확실한 값은 없으며 대략 50% 정도를 기준으로 처리
+   ** 도메인 지식이 있으면 바운더리가 늘어날 수 있음
+
+ * Imputing Missing Values
+   ** 누락된 값을 가지는 경우 일반적으로 숫자로 된 열의 경우 전체의 평균 또는 중앙값 등을 사용
+
+ * Next Steps
+   ** 지금까지 선형 회귀 모델에서 사용할 Feature 들을 가공하는 몇가지 방법에 대해 학습
+   ** 다음은 지금까지 배운 항목들을 이용한 Guide Project 를 학습
+
+== 활용 주요 function
+ * import pandas as pd
+ * function
+   ** Dataframe.value_counts()
+   ** col_dummies = pd.get_dummies(train[col]) : 특정 컬럼을 더미컬럼으로 변경
+   ** train = pd.concat([train, col_dummies], axis=1) : 특정 컬럼 추가
+   ** del train[col] : 특정 컬럼 삭제
+   ** Dataframe[(train_null_counts>0) & (train_null_counts<584)].index] : 조건을 이용한 데이터 프레임 선택 예
+   ** pandas.DataFrame.fillna(mean) : n/a 에 해당하는 셀에 임의의값(mean) 으로 채워줌

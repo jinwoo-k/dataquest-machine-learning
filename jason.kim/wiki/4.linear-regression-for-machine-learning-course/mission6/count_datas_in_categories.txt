@@ -1,0 +1,298 @@
+-----MS Zoning-----
+RL         868
+RM         184
+FV          44
+C (all)     10
+RH           8
+Name: MS Zoning, dtype: int64
+-----Street-----
+Pave    1110
+Grvl       4
+Name: Street, dtype: int64
+-----Lot Shape-----
+Reg    764
+IR1    322
+IR2     22
+IR3      6
+Name: Lot Shape, dtype: int64
+-----Land Contour-----
+Lvl    987
+HLS     65
+Bnk     49
+Low     13
+Name: Land Contour, dtype: int64
+-----Utilities-----
+AllPub    1114
+Name: Utilities, dtype: int64
+-----Lot Config-----
+Inside     858
+Corner     182
+CulDSac     47
+FR2         22
+FR3          5
+Name: Lot Config, dtype: int64
+-----Land Slope-----
+Gtl    1061
+Mod      50
+Sev       3
+Name: Land Slope, dtype: int64
+-----Neighborhood-----
+NAmes      158
+CollgCr    127
+OldTown     86
+Edwards     79
+NridgHt     70
+Somerst     66
+Crawfor     59
+Gilbert     58
+Mitchel     49
+Sawyer      45
+IDOTRR      42
+NWAmes      40
+Timber      37
+BrkSide     35
+SawyerW     28
+NoRidge     25
+StoneBr     24
+SWISU       20
+MeadowV     14
+BrDale      13
+Veenker      9
+Blmngtn      9
+ClearCr      8
+NPkVill      5
+Greens       4
+Blueste      4
+Name: Neighborhood, dtype: int64
+-----Condition 1-----
+Norm      977
+Feedr      53
+Artery     28
+RRAn       26
+RRAe       10
+PosN        9
+PosA        8
+RRNn        3
+Name: Condition 1, dtype: int64
+-----Condition 2-----
+Norm      1105
+Feedr        5
+PosA         2
+PosN         1
+Artery       1
+Name: Condition 2, dtype: int64
+-----Bldg Type-----
+1Fam      940
+TwnhsE     92
+Twnhs      37
+Duplex     23
+2fmCon     22
+Name: Bldg Type, dtype: int64
+-----House Style-----
+1Story    554
+2Story    338
+1.5Fin    119
+SLvl       50
+SFoyer     29
+2.5Unf     12
+1.5Unf      8
+2.5Fin      4
+Name: House Style, dtype: int64
+-----Roof Style-----
+Gable      875
+Hip        219
+Gambrel     10
+Mansard      4
+Shed         3
+Flat         3
+Name: Roof Style, dtype: int64
+-----Roof Matl-----
+CompShg    1101
+WdShngl       5
+WdShake       3
+Tar&Grv       3
+Roll          1
+ClyTile       1
+Name: Roof Matl, dtype: int64
+-----Exterior 1st-----
+VinylSd    422
+MetalSd    180
+Wd Sdng    158
+HdBoard    143
+Plywood     65
+CemntBd     54
+BrkFace     30
+WdShing     24
+Stucco      17
+AsbShng     17
+BrkComm      2
+Stone        1
+ImStucc      1
+Name: Exterior 1st, dtype: int64
+-----Exterior 2nd-----
+VinylSd    420
+MetalSd    180
+Wd Sdng    148
+HdBoard    121
+Plywood     93
+CmentBd     55
+Wd Shng     25
+Stucco      23
+BrkFace     20
+AsbShng     13
+ImStucc      8
+Brk Cmn      4
+AsphShn      2
+Stone        1
+Other        1
+Name: Exterior 2nd, dtype: int64
+-----Mas Vnr Type-----
+None       656
+BrkFace    348
+Stone       99
+BrkCmn      10
+CBlock       1
+Name: Mas Vnr Type, dtype: int64
+-----Exter Qual-----
+TA    668
+Gd    399
+Ex     41
+Fa      6
+Name: Exter Qual, dtype: int64
+-----Exter Cond-----
+TA    979
+Gd    110
+Fa     20
+Ex      5
+Name: Exter Cond, dtype: int64
+-----Foundation-----
+PConc     525
+CBlock    460
+BrkTil    125
+Stone       4
+Name: Foundation, dtype: int64
+-----Bsmt Qual-----
+TA    493
+Gd    463
+Ex    116
+Fa     40
+Po      2
+Name: Bsmt Qual, dtype: int64
+-----Bsmt Cond-----
+TA    999
+Gd     65
+Fa     47
+Ex      2
+Po      1
+Name: Bsmt Cond, dtype: int64
+-----Bsmt Exposure-----
+No    706
+Av    194
+Gd    121
+Mn     93
+Name: Bsmt Exposure, dtype: int64
+-----BsmtFin Type 1-----
+Unf    355
+GLQ    306
+ALQ    175
+Rec    118
+BLQ     97
+LwQ     63
+Name: BsmtFin Type 1, dtype: int64
+-----BsmtFin Type 2-----
+Unf    990
+Rec     39
+LwQ     32
+BLQ     25
+ALQ     15
+GLQ     13
+Name: BsmtFin Type 2, dtype: int64
+-----Heating-----
+GasA    1100
+GasW      13
+Grav       1
+Name: Heating, dtype: int64
+-----Heating QC-----
+Ex    602
+TA    297
+Gd    185
+Fa     28
+Po      2
+Name: Heating QC, dtype: int64
+-----Central Air-----
+Y    1056
+N      58
+Name: Central Air, dtype: int64
+-----Electrical-----
+SBrkr    1019
+FuseA      74
+FuseF      18
+FuseP       2
+Mix         1
+Name: Electrical, dtype: int64
+-----Kitchen Qual-----
+TA    552
+Gd    456
+Ex     81
+Fa     25
+Name: Kitchen Qual, dtype: int64
+-----Functional-----
+Typ     1043
+Min2      23
+Min1      23
+Mod       12
+Maj1      10
+Maj2       2
+Sal        1
+Name: Functional, dtype: int64
+-----Garage Type-----
+Attchd     685
+Detchd     327
+BuiltIn     77
+2Types      13
+Basment      9
+CarPort      3
+Name: Garage Type, dtype: int64
+-----Garage Finish-----
+Unf    494
+RFn    324
+Fin    296
+Name: Garage Finish, dtype: int64
+-----Garage Qual-----
+TA    1042
+Fa      57
+Gd       9
+Po       4
+Ex       2
+Name: Garage Qual, dtype: int64
+-----Garage Cond-----
+TA    1066
+Fa      34
+Po       7
+Gd       5
+Ex       2
+Name: Garage Cond, dtype: int64
+-----Paved Drive-----
+Y    1022
+N      62
+P      30
+Name: Paved Drive, dtype: int64
+-----Sale Type-----
+WD       898
+New      165
+COD       27
+CWD        9
+ConLD      6
+ConLw      3
+ConLI      3
+VWD        1
+Oth        1
+Con        1
+Name: Sale Type, dtype: int64
+-----Sale Condition-----
+Normal     845
+Partial    167
+Abnorml     65
+Family      25
+Alloca       6
+AdjLand      6

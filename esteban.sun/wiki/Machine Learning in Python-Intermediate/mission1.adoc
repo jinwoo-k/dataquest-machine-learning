@@ -1,0 +1,63 @@
+== Logistic Regression
+
+ * Classification
+   ** 선형 회귀는 예측하고자 하는 필드의 값이 연속적일때 유용함
+   ** 연속적이지 않는 필드의 경우 선형 회귀는 사용할 수 없음
+   ** 분류문제(Classification)에 대한 예측 모델에 대한 학습
+   ** 참과 거짓의 값을 가지는 Binary 분류
+
+ * Introduction to the data
+   ** 신청자가 대학원 프로그램에 입학 할 것인지 여부를 예측 (644개의 데이터)
+      *** GRE - 신청자의 Graduate Record 시험 점수, 예비 대학원생을위한 일반 시험 (200 ~ 800)
+      *** GPA - 대학 학점 평균 (0.0 ~ 4.0)
+      *** ADMIT - 이진 값으로 1은 합격, 0은 불합격을 나타냄
+
+ * Logistic regression
+   ** admit 열에는 값 0과 1 만 포함
+   ** 이 미션에서 우리는 로지스틱 회귀 (logistic regression)라는 분류 기법에 중점을 둘 것임
+   ** 선형 회귀 모델이 실수값을 출력하는 반면에 로지스틱 회귀 모델은 확률 값을 출력 함
+   ** 이진 분류에서 확률 값이 특정 임계확률보다 크면 해당 행의 레이블을 1로 지정하고 그렇지 않으면 0으로 지정
+
+ * Logit function
+   ** 선형 회귀 분석에서는 독립 변수와 종속 변수 간의 관계를 나타 내기 위해 선형 함수 y = mx + b를 사용
+   ** 로지스틱 회귀 분석에서 우리는 분류에 적용되는 선형 함수의 버전 인 logit 함수를 사용
+   ** 값을 양수로 만들기 위한 지수 변환과 값을 0~1 사이의 값으로 만들기 위한 정규화 변환으로 구성
+
+ * Training a logistic regression model
+   ** scikit-learn에서 로지스틱 회귀 모델 사용
+   ** LinearRegression 클래스 대신 LogisticRegression 클래스를 사용
+   ** 방식은 선형 회귀 모델을 트레이닝하는 것과 유사
+
+ * Plotting probabilities
+ * Predict labels
+
+ * Next steps
+   ** 분류의 기초와 로지스틱 회귀라는 특정 분류 기술을 사용하는 방법 학습
+   ** 다음 미션에서는 분류 모델의 효과를 평가하는 방법에 대한 학습
+
+== 활용 주요 function
+ * import pandas as pd
+ * import numpt as np
+ * import matplotlib.pyplot as plt
+ * from sklearn.linear_model import LinearRegression
+ * from sklearn.linear_model import LogisticRegression
+ * function
+   ** array 다루기
+      *** 단일배열에서의 array (인덱스는 0 부터)
+         **** array[:] : array 의 모든 성분 추출
+         **** array[값1] : 값1 에 해당하는 인덱스의 값 추출
+         **** array[값1:값2] : 값1 에서 값2 이전까지의 값 추출
+         **** array[값1:값2] = 값3 : 값1 에서 값2 이전까지의 인덱스의 값으로 값3을 입력
+      *** 다차원 배열에서의 array
+         **** 다차원 배열에서의 , 은 행과 열을 구분하는 구분자로 사용됨
+         **** array[2,:] : 행의 인덱스가 2 인 모든 열을 추출
+         **** array[:,0] : 열의 인덱스가 0 인 모든 행의 값을 추출
+      *** 참고 : numpy 의 배열 관련 함수 (https://datascienceschool.net/view-notebook/17608f897087478bbeac096438c716f6/)
+   ** admissions = pd.read_csv("admissions.csv")
+   ** plt.scatter(admissions['gpa'], admissions['admit'])
+   ** plt.show()
+   ** linear_model = LinearRegression()
+   ** linear_model.fit(admissions[["gpa"]], admissions["admit"])
+   ** logistic_model = LogisticRegression()
+   ** logistic_model.fit(admissions[["gpa"]], admissions["admit"])
+   ** logistic_model.predict_proba(admissions[["gpa"]])

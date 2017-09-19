@@ -43,15 +43,25 @@
 * [mission3. Gradient Descent](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/4.linear-regression-for-machine-learning/mission3.asc)
 * [mission4. Ordinary Least Squares](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/4.linear-regression-for-machine-learning/mission4.asc)
 
+### Machine Learning in Python: Intermediate
+
+* [https://www.dataquest.io/course/machine-learning-intermediate](https://www.dataquest.io/course/machine-learning-intermediate)
+* [mission1. Logistic Regression](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/5.machine-learning-in-python-intermediate/mission1.asc)
+* [mission2. Introduction To Evaluating Binary Classifiers](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/5.machine-learning-in-python-intermediate/mission2.asc)
+* [mission3. Multiclass Classification]()
+* [mission4. Intermediate Linear Regression]()
+* [mission5. Overfitting]()
+* [mission6. Clustering Basics]()
+* [mission7. K-Means Clustering]()
+* [mission8. Gradient Descent]()
+* [mission9. Introduction To Neural Networks]()
+* [mission10. Guided Project: Predicting The Stock Market]()
+
+
 ### Machine Learning in Python: Beginner
 
 * [https://www.dataquest.io/course/machine-learning-beginner](https://www.dataquest.io/course/machine-learning-beginner)
 
-
-
-### Machine Learning in Python: Intermediate
-
-* [https://www.dataquest.io/course/machine-learning-intermediate](https://www.dataquest.io/course/machine-learning-intermediate)
 
 
 

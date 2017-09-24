@@ -1,0 +1,99 @@
+== Intermediate Linear Regression
+
+ * Introduction to the Data
+   ** 피사의 사탑의 년도별 기울기에 대한 자료를 이용하여 학습
+   ** 수백년간 기울어지기 시작하여 현재 축에서 5.5도, 거의 3미터가 이격됨
+
+ * Fit the Linear Model
+   ** 위의 기울어진 정도와 년도와의 관계를 plot 해 보면 선형 회귀에 적합함을 확인할 수 있음
+   ** Statsmodels 라이브러리를 이용하여 통계모델을 구현
+   ** 상수 추가 ???
+
+ * Define a Basic Linear Model
+   ** yi = b0 + b1xi + ei
+   ** residuals = 추정치 - 실제값
+
+ * Histogram of Residuals
+   ** 잔차의 히스토그램을 보면 오류가 적당한지를 시각적으로 확인 할 수 있음
+   ** 일반적으로 종 모양의 히스토그램으로 나오는 경우 정상적인지에 대한 가정을 수락함
+   ** 이후에서는 예측이 정상적인지에 대한 통계적인 테스트에 대해서 학습
+
+ * Interpretation of Histogram
+   ** 위에서 살펴본 데이터는 13개의 값만을 가지고 있어서 plot 을 해석하기 어려움
+   ** 가장 큰 그래프꼭지도 4 라는 값이 최고임
+   ** 이 선형 모델을 이용하여 통계적 적합성 측정을 학습
+
+ * Sum of Squares
+   ** 선형 회귀 모델을 평가하는 데 많이 사용되는 통계적 측정 방법은 3개의 제곱합 측정임
+   ** 세 가지 척도는 SSE (Sum of Square Error), RSS (Regression Sum of Squares) 및 TSS (Total Sum of Squares)
+   ** 각각의 척도는 전체 모델의 분산을 의미함
+   ** ybar (average y) = np.mean(y.values)
+   ** SSE (sum the (predicted - observed) squared) = np.sum((y.values-yhat)**2)
+   ** RSS (sum the (mean - predicted) squared) = np.sum((ybar-yhat)**2)
+   ** TSS (sum the (mean - observed) squared) = np.sum((ybar-y.values)**2)
+   ** TSS = RSS + SSE
+
+ * R-Squared
+   ** 결정 계수 (R-Squared라고도 함)는 선형 의존성의 훌륭한 척도이며, 목표 변수의 변동 비율이 모델에 의해 설명되는 것을 말해주는 단일 숫자
+   ** R2 = 1 - (SSE / TSS) = RSS / TSS
+   ** 낮은 SSE와 높은 RSS가 잘 맞는 것을 나타내므로 이 단일 척도는 모델이 고려하는 데이터의 전체 변화 중 몇 퍼센트가되는지 알려주며 0과 1 사이에 존재
+
+ * Interpretation of R-Squared
+   ** 위에서 R2 의 값은 0.988 로 우리 선형 모델에서는 데이터 내에서 98.8% 를 차지함 (??)
+
+ * Coefficients of the Linear Model
+   ** 다른 복잡한 모델에 비해 선형 모델의 경우 계수가 나타내는 의미를 이해하고 해석하는데 유리함
+   ** 선형 모델이 f (x) = β0 + β1x 라 하면 각 βi는 계수임
+   ** 행 연도는 독립 변수 x에 해당하며 lean은 대상 변수입니다. const 변수는 모델의 절편을 나타냄
+   ** 계수는 독립 변수의 단위 증가에 따라 종속 변수가 변경되는 정도를 측정
+   ** 예를 들어, 연도의 계수가 0.0009 라 하면 평균적으로 피사의 탑이 연간 0.0009 미터가 기울어 짐을 의미
+
+ * Variance of Coefficients
+   ** 각 계수의 분산은 중요하며, 이 예에서의 계수는 매년 타워가 기울어지는 미터 수를 나타냄
+   ** 이 계수의 분산은 각 년도에 대한 기울어지는 미터의 예상 간격을 나타냄
+   ** 표준 오차는 추정 된 분산의 제곱근
+   ** 단일 변수 선형 모델에 대한 추정 분산
+      s2(β1_hat) = ∑i=1~n (yi−yi_hat)^2 / (n−2) * ∑i=1~n (xi−x_mean)^2 = SSE / (n−2) * ∑i=1~n (xi−x_mean)^2
+
+ * T-Distribution
+   ** 통계적 유의성에 대한 일반적인 테스트는 T-test
+   ** 일반적으로 표본의 수에 따라 작을수록 신뢰도가 떨어짐
+   ** t-분포는 관측 수와 관련된 분산을 증가시킴으로써 이를 고려하고 있으며, 관측치의 수가 증가하면 t-분포가 정규 분포에 근접하게 됨
+   ** 유의성 검정에는 t-분포의 밀도 함수가 사용되며,
+      *** 확률 밀도 함수(pdf)는 연속 확률 변수의 상대 우도를 모델링
+      *** 누적 밀도 함수(cdf)는 확률 변수가 한 점보다 작거나 같을 확률을 모델링
+      *** 자유도 (df)는 표본의 관측 수를 나타냄
+   ** Scipy는 scipy.stats.t 라이브러리를 이용하여 자유도에 관계없이 t-분포의 pdf와 cdf를 계산
+   ** scipy.stats.t.pdf(x, df)는 df 의 자유도가있는 변수 x의 pdf를 추정하는 데 사용
+
+ * Statistical Significance of Coefficients
+   ** t-분포를 이용하여 중요도 테스트에 활용
+   ** 일반적으로 계수가 0이라 하면 해를 예측하는데 해당 인자가 영향을 끼치지 않음을 설명함
+   ** 귀무가설을 테스트 하기 위해서 t-분포를 사용하며 t-통계량을 구함
+   ** 이 통계량은 기대 계수가 0에서부터 얼마나 많은 표준 편차를 갖는지 측정함
+   ** β1이 0 일 때 분산이 낮으면 t는 매우 높아짐
+   ** pdf에서 볼 수 있듯이 0에서 멀리 떨어진 t-통계량은 매우 낮은 확률을 갖게 됨
+
+ * The P-Value ??
+   ** 계산된 t-통계량으로 계수를 테스트 할 수 있음
+   ** 어떤 유의 수준에서 β1이 0이 아닌 확률을 찾아야하며, 95% 유의 수준을 사용
+   ** 즉, β1이 0과 95% 차이가 나는 것을 의미하며 이것은 t-분포를 사용하여 수행됨
+   ** 선형 회귀 계수에는 계수가 0보다 작고 0보다 큰지 여부를 테스트하는 양면 테스트를 사용해야 함 (예를 들어, 타워가 기대는 연간 미터 수는 양수 또는 음수 일 수 있음)
+   ** 95 % 신뢰 구간에서 β1이 양수인지 음수인지를 테스트하기 위해 우리는 분포에서 2.5와 97.5 백분위 수를 관찰하여이 두 값 사이에 95 % 신뢰를 남긴다
+   ** t-분포가 0에 대해 대칭이므로 절대 값을 취하여 97.5 백분위 수 (양수 측)에서만 테스트 할 수 있음
+
+ * Conclusion
+   ** 이번 미션에서 선형 모델을 측정하는데 자주 사용되는 통계를 계산하고 해석하는 방법에 대해 학습함
+   ** 다음 미션에서는 오버핏팅과 그것을 저지하기 위한 방법에 대해 학습
+
+== 활용 주요 function
+ * import pandas as pd
+ * import statsmodels.api as sm
+ * from sklearn.linear_model import LogisticRegression
+ * from scipy.stats import t
+
+ * function
+   ** sm.add_constant(X) : ??
+   ** linear = sm.OLS(y:추정, x:년도), linear.fit().summary()
+   ** linearfit.predict(X) : 설정(fit) 한 모델을 이용하여 예측 진행
+   ** t.pdf

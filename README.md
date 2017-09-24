@@ -51,7 +51,7 @@
 * [mission3. Multiclass Classification]()
 * [mission4. Intermediate Linear Regression]()
 * [mission5. Overfitting]()
-* [mission6. Clustering Basics]()
+* [mission6. Clustering Basics](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/5.machine-learning-in-python-intermediate/mission6.asc)
 * [mission7. K-Means Clustering]()
 * [mission8. Gradient Descent]()
 * [mission9. Introduction To Neural Networks]()

@@ -1,0 +1,53 @@
+== Overfitting
+
+ * Introduction
+   ** Overfitting 을 피하기 위한 방법에 대한 학습
+   ** 지난번 자동차 원산지에 대한 분류 회귀에서 사용한 데이터를 이용
+
+ * Bias and Variance
+   ** Overfitting 은 bias 와 variance 를 이해해야 함
+   ** bias 는 학습 알고리즘에 대한 잘못된 가정을 초래하는 오류를 설명함 (전체적으로 치우침 정도)
+   ** variance 는 모델의 예측값의 다양성에 의해 발생하는 오류를 설명함 (흩어짐 정도)
+   ** 이상적인 상황에서는 낮은 bias 와 낮은 variance 를 원하지만 실제로는 그렇지 않음
+
+ * Bias-variance tradeoff
+   ** 모든 프로세스에는 noise 가 존재하며 Overfitting 된 모델은 noise 를 포착하는 경향이 있음
+   ** 동일한 데이터 세트에서 서로 다른 Feature 를 이용하여 선형회귀 모델을 학습하고 절대오차 평균제곱오차 또는 R-Squared 를 계산하여 bias를 추정할 수 있음
+   ** image:http://i.imgur.com/2xqTu46.png[]
+
+ * Multivariate models
+   ** 다양한 Feature 에 대한 모델들에 대해 mse 와 variance 를 계산
+
+ * cross validation
+   ** 모델이 Overfitting 인지 확인하는데 있어서는 Train Set 과 Test Set 간의 오류를 비교
+   ** out-of-sample error : 테스트 셋을 이용한 모델로 분석
+   ** test 셋티 없는 경우 교차 유효성 검사를 사용 (Cross Validation)
+   ** 샘플에 대한 오류 보다 샘플 외부 오류(테스트 셋) 가 크면 Overfitting 으로 판단할 수 있음
+
+ * Plotting cross-validation error vs. cross-validation variance
+   ** 교차 유효성 검사 중 모델에 추가된 Feature 가 많을 수록 mse 가 낮아짐
+   ** 이런 케이스는 설정한 모델이 새로운 데이터셋에도 잘 적용될 수 있는 일반화가 되어 있음을 나타냄
+   ** 대신 예측된 분산값이 커지게 됨 (따라서, bias 와 variance 간 trade off 가 필요함)
+   ** image:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXEAAAEACAYAAABF%2BUbAAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz%0AAAALEgAACxIB0t1%2B/AAAFbhJREFUeJzt3X9MVff9x/HXVTHBGUTb68FNem9dVhAGelF0SZflwvix%0AX4puirPEEktjmtbENFtq4j%2BlWaLXNN2i2Uy%2B21DZLyp/iVldu0q8rGVpwUFns4Amsxe1K3BbCVZh%0AFrzn%2B4ctU7Fy7pXbw0eej8Tk3tt77ufVtH31c9/3nHs9tm3bAgAYaYbbAQAAiaPEAcBglDgAGIwS%0ABwCDUeIAYDBKHAAM5qjEBwcHtXHjRi1dulS5ubl6%2B%2B23NTAwoLKyMmVlZam8vFyDg4PJzgoAuI2j%0AEt%2BxY4e%2B973vqaurS//85z%2BVnZ2tUCikkpISnTlzRsXFxdqzZ0%2ByswIAbuOZ6GKfy5cvKxAI6N//%0A/vctj2dnZ6ulpUWWZam3t1fBYFDd3d1JDQsAuNWEO/H33ntPDz74oLZu3aqCggJt27ZNQ0ND6uvr%0Ak2VZkqSMjAz19/cnPSwA4FYTlvjo6Kg6Ojr0zDPPqKOjQ1/60pcUCoXk8Xhued7t9wEAyTdroics%0AXrxYmZmZWrlypSTpRz/6kUKhkCzLGtuN9/b2auHChXc8nnIHgMQ4%2BWqrCXfilmUpMzNTZ8%2BelSQ1%0ANzcrNzdXa9eu1eHDhyVJ9fX1qqiouGsQU/88//zzrmeYrvlNzk5%2B9/%2BYnt%2BpCXfikrR//35VVVVp%0AZGRES5Ys0aFDh3T9%2BnVVVlbq4MGD8vl8amxsdLwoAGByOCrxZcuWqb29fdzjJ06cmPRAAADnuGJz%0AAsFg0O0I98Tk/CZnl8jvNtPzOzXheeL3vIDHE9d8BwDgvDvZiQOAwShxADAYJQ4ABqPEAcBglDgA%0AGIwSBwCDUeIAYDBKHAAMRokDgMEocQAwGCUOAAajxAHAYJQ4ABiMEgcAg1HiAGAwShwADEaJA4DB%0AKHEAMBglDgAGo8QBwGCUOAAYjBIHAINR4gBgMEocAAxGiQOAwShxADDYLCdP8vv9mjdvnmbMmKGU%0AlBS1tbVpYGBAmzZtUk9Pj/x%2BvxobGzVv3rxk5wUA3MTRTnzGjBkKh8Pq7OxUW1ubJCkUCqmkpERn%0AzpxRcXGx9uzZk9SgAIDxHJW4bduKxWK3PNbU1KTq6mpJUnV1tY4ePTr56QAgAdFoVO3t7YpGo25H%0ASTpHJe7xeFRaWqrCwkL99re/lST19fXJsixJUkZGhvr7%2B5OXEgAcamg4Ip8vW6WlT8nny1ZDwxG3%0AIyWVo5l4a2urFi1apGg0qrKyMmVlZcnj8dzynNvvA8AXLRqNqqbmaQ0Pn9TwcL6k06qpKVJJSbG8%0AXq/b8ZLCUYkvWrRIkuT1erVu3Tq1tbXJsqyx3Xhvb68WLlz4ucfX1taO3Q4GgwoGg/cUGgDuJBKJ%0AaPZs/6cFLkn5SknxKRKJTPkSD4fDCofDcR/nsW3bvtsThoaGFIvFNHfuXF29elVlZWV6/vnn1dzc%0ArAULFmjnzp3au3evBgYGFAqFxi/g8WiCJQBMMdFoVJFIRH6/f8qX382i0ah8vmwND5%2BUdGMnnppa%0ApJ6ebqP%2BPiTn3TnhTryvr0/r16%2BXx%2BPR6OioqqqqVFZWppUrV6qyslIHDx6Uz%2BdTY2PjpAQH4K6G%0AhiOqqXlas2f79cknEdXVHdDmzZvcjuWI1%2BtVXd0B1dQUKSXFp5GRHtXVHTCuwOMx4U78nhdgJw4Y%0A437ZyZr6TuJmk7YTBzB9mDxTvpnX6zUq773gsnsAY/z%2BGyMU6fSnj5zWyMiNq7IxNVHiAMZ8NlNO%0ATS1SWlqBUlOL7vuZsumYiQMY536YKZvOaXdS4gAwBTntTsYpAGAwShwADEaJA4DBKHEAMBglDgAG%0Ao8QBwGCUOAAYjBIHAINR4gBgMEocAAxGiQOAwShxADAYJQ4ABqPEAcBglDgAGIwSB5IgGo2qvb1d%0A0WjU7Si4z1HimJJMLsGGhiPy%2BbJVWvqUfL5sNTQccTsS7mP8sg%2BmnIaGI6qpeVqzZ9/40d66ugPa%0AvHmT27EciUaj8vmyNTx8UlK%2BpNNKTS1ST083P3OGuPDLPjBSNBpVTc3TGh4%2BqcHBf2h4%2BKRqap42%0AZkceiUQ0e7ZfNwpckvKVkuJTJBJxLxTua5Q4phTTS9Dvv/HuQTr96SOnNTLSI7/f714o3NcocUwp%0Appeg1%2BtVXd0BpaYWKS2tQKmpRaqrO8AoBUnDTBxTzmcz8ZQUn0ZGeoyaiX8mGo0qEonI7/dT4EiI%0A0%2B6kxDElUYKY7ihxADDYpJ%2BdEovFVFBQoLVr10qSBgYGVFZWpqysLJWXl2twcDDxtACAhDgu8X37%0A9iknJ2fsfigUUklJic6cOaPi4mLt2bMnKQGROJMvmAHgjKMSv3jxoo4fP64nn3xy7LGmpiZVV1dL%0Akqqrq3X06NHkJERCuGoQmB4clfizzz6rF198UR6PZ%2Byxvr4%2BWZYlScrIyFB/f39yEiJupl8wA8C5%0AWRM94ZVXXpFlWVq%2BfLnC4fDnPu/mgr9dbW3t2O1gMKhgMBhPRsTpswtmhofHXzDDmR7A1BQOh%2B/a%0AsZ9nwrNTdu3apT/84Q%2BaNWuWhoeH9fHHH2v9%2BvU6deqUwuGwLMtSb2%2BvioqK1NXVNX4Bg89OMfU0%0AN76/AzDfpJ2dsnv3bp0/f17nzp3Tyy%2B/rOLiYv3%2B97/XmjVrdPjwYUlSfX29Kioq7jn0VGLyTJmr%0ABoHpI67zxFtaWvTSSy/p2LFjunTpkiorK3XhwgX5fD41NjYqPT19/AIG7sTvl52sqe8kAHCxzz1p%0Ab29XaelTGhz8x9hjaWkFOnHi/1RYWOhiMgDTBV9Few9M/xImANMHJX4HzJQBmIJxyl0wUwbgFmbi%0AAGAwZuIAMA1Q4gBgMEocAAxGiQOAwShxADAYJQ4ABqPEAcBglDgAGIwSBwCDUeIAYDBKHAAMRokD%0AgMEocQAwGCUOAAajxAHAYJQ4ABiMEgcAg1HiAGAwShwADEaJA4DBKHEAMBglDgAGo8QBwGCUOAAY%0AbMISv3btmlavXq1AIKDc3Fzt2rVLkjQwMKCysjJlZWWpvLxcg4ODSQ8LALiVx7Zte6InDQ0Nac6c%0AObp%2B/boeffRRvfTSSzp27JgeeOABPffcc9q7d68GBgYUCoXGL%2BDxyMESAICbOO1OR%2BOUOXPmSLqx%0AK4/FYpo/f76amppUXV0tSaqurtbRo0fvIS4AIBGOSjwWiykQCCgjI0PBYFA5OTnq6%2BuTZVmSpIyM%0ADPX39yc1KABgvFlOnjRjxgx1dnbq8uXLKi8vVzgclsfjueU5t9%2B/WW1t7djtYDCoYDCYUFgAuF%2BF%0Aw2GFw%2BG4j3M0E7/Zz372M6Wmpqqurk7hcFiWZam3t1dFRUXq6uoavwAzcQCI26TNxD/88MOxM0%2BG%0Ah4f1%2BuuvKxAIaO3atTp8%2BLAkqb6%2BXhUVFfeWGAAQtwl34u%2B%2B%2B66qq6tl27ZisZi2bNmin/70p7p0%0A6ZIqKyt14cIF%2BXw%2BNTY2Kj09ffwC7MQBIG5OuzPucUqyggAA/mdSTzEEAExNlDgAGIwSBwCDUeIA%0AYDBKHAAMRokDgMEocQAwGCUOAAajxAHAYJQ4ABiMEgcAg1HiAGAwShwADEaJA4DBKHEAMBglDgAG%0Ao8QBwGCUOAAYjBIHAINR4gBgMEocAAxGiQOAwShxADAYJQ4ABqPE7yIajaq9vV3RaNTtKABwR5T4%0A5zjS0KBsn09PlZYq2%2BfTkYYGtyMBwDge27btpC7g8SjJS0y6aDSqbJ9PJ4eHlS/ptKSi1FR19/TI%0A6/W6HQ/ANOC0O9mJ30EkEpF/9mzlf3o/X5IvJUWRSMTFVPFjHATc/yYs8YsXL6q4uFi5ubnKy8vT%0A/v37JUkDAwMqKytTVlaWysvLNTg4mPSwXxS/36/IJ5/o9Kf3T0vqGRmR3%2B93MVV8GAcB08OE45Te%0A3l719vZq%2BfLlunLlilasWKGmpiYdOnRIDzzwgJ577jnt3btXAwMDCoVC4xcwcJwi3SjBp2tq5EtJ%0AUc/IiA7U1WnT5s1ux3KEcRBgPqfdGfdMfN26ddq%2Bfbu2b9%2BulpYWWZal3t5eBYNBdXd3JxxkKopG%0AozdGK36/UeXX3t6up0pL9Y%2Bb3h0VpKXp/06cUGFhoYvJADjltDtnxfOikUhE77zzjr7xjW%2Bor69P%0AlmVJkjIyMtTf359Y0inM6/UaVd6fuXkc9NlO3LRxEABnHJf4lStXtGHDBu3bt09z586Vx%2BO55a/f%0Afv9mtbW1Y7eDwaCCwWDcQeGc1%2BvVgbo6Fd02DjLxf0jAdBEOhxUOh%2BM%2BztE4ZXR0VD/4wQ/03e9%2B%0AVzt27JAkLV26VOFweGycUlRUpK6urvELGDxOMZ2p4yAAk3yK4RNPPKGcnJyxApektWvX6vDhw5Kk%0A%2Bvp6VVRUJJYUSeP1elVYWEiBA/exCXfira2t%2Bta3vqW8vDx5PB55PB7t3r1bq1atUmVlpS5cuCCf%0Az6fGxkalp6ePX4CdOADELWlnpyQrCHAz00dBpueH%2B7hiE8Yy/UIl0/PDLOzEMaWYfqGS6fkxdbAT%0Ah5FM/94a0/PDPJQ4phTTv7fG9PwwDyWOKWXsQqXUVBWkpakoNdWoC5VMzw/zMBPHlGT62R2m54f7%0AOMUQAAzGB5sAMA1Q4gBgMEocAAxGiQOAwShxADAYJQ4ABqPEAcBglDgAGIwSBwCDUeIAYDBKHAAM%0ARokDgMEocQAwGCUOAAajxAHAYJQ4gHGi0aja29sVjUbdjoIJUOIAbnGkoUHZPp%2BeKi1Vts%2BnIw0N%0AbkfCXfDLPgDGRKNRZft8Ojk8rHzd%2BKHnotRUdff0GPUzc/fDz%2BPxyz4A4haJROSfPVv5n97Pl%2BRL%0ASVEkEnExVXym2zsJduIAxpi%2BEzc9/83YiQOIm9fr1YG6OhWlpqogLU1Fqak6UFdnTAHeD%2B8k4jXh%0ATrympkZ//vOfZVmWTp8%2BLUkaGBjQpk2b1NPTI7/fr8bGRs2bN%2B/OC7ATB4xj6kyZnfgdbN26Va%2B9%0A9totj4VCIZWUlOjMmTMqLi7Wnj17Ek8KYMrxer0qLCw0rvhMfyeRCEcz8Z6eHq1Zs2ZsJ56dna2W%0AlhZZlqXe3l4Fg0F1d3ffeQF24gC%2BYKa%2Bk7iZ0%2B6clciL9/f3y7IsSVJGRob6%2B/sTeRkASAqv12ts%0AecdrUj7Y9Hg8k/EyAIA4JbQTtyxLfX19Y%2BOUhQsX3vX5tbW1Y7eDwaCCwWAiywLAfSscDiscDsd9%0AnKOZeCQS0Zo1a/Tuu%2B9Kknbu3KkFCxZo586d2rt3rwYGBhQKhe68ADNxAIib0%2B6csMQfe%2BwxhcNh%0AffTRR7IsSy%2B88ILWrVunjRs36sKFC/L5fGpsbFR6evo9BQEA/M%2BklfgXFQQA8D9csQkA0wAlDgAG%0Ao8QBwGCUOAAYjBIHAINR4gBgMEocAAxGiQOAwShxADAYJQ4ABqPEAcBglDgAGIwSBwCDUeIAYDBK%0AHAAMRokDgMEocQAwGCUOAAajxAHAYJQ4ABiMEgcAg1HiAGAwShwADEaJA4DBKHEAMBglDgAGo8QB%0AwGCUOAAY7J5K/NVXX1V2drYeeeQR7d27d7IyAQAcSrjEY7GYtm/frtdee03/%2Bte/1NDQoO7u7snM%0ANiWEw2G3I9wTk/ObnF0iv9tMz%2B9UwiXe1tamr33ta/L5fEpJSdGPf/xjNTU1TWa2KcH0fxFMzm9y%0Adon8bjM9v1MJl/j777%2BvzMzMsfuLFy/W%2B%2B%2B/PymhAADO8MEmABjMY9u2nciBb731lmpra/Xqq69K%0AkkKhkDwej3bu3HnrAh7PvacEgGnIST0nXOLXr19XVlaWmpubtWjRIq1atUoNDQ1aunRpIi8HAEjA%0ArEQPnDlzpn75y1%2BqrKxMsVhMNTU1FDgAfMES3okDANyXtA82a2pqZFmW8vPzk7VE0ly8eFHFxcXK%0Azc1VXl6e9u/f73akuFy7dk2rV69WIBBQbm6udu3a5XakhMRiMRUUFGjt2rVuR4mb3%2B/XsmXLFAgE%0AtGrVKrfjxG1wcFAbN27U0qVLlZubq7ffftvtSI6dPXtWgUBABQUFCgQCmjdvnlH/De/Zs0e5ubnK%0Az89XVVWVPvnkk7sfYCfJG2%2B8YXd2dtp5eXnJWiJpPvjgA7uzs9O2bdv%2B%2BOOP7UceecTu6upyOVV8%0Arl69atu2bY%2BOjtqrV6%2B233zzTZcTxe/nP/%2B5XVVVZa9Zs8btKHF7%2BOGH7UuXLrkdI2HV1dX2wYMH%0Abdu27ZGREXtwcNDlRIm5fv26vWjRIvv8%2BfNuR3EkEonYDz/8sH3t2jXbtm27srLSrq%2Bvv%2BsxSduJ%0Af/Ob39T8%2BfOT9fJJlZGRoeXLl0uS5s6dq6VLlxp3DvycOXMk3diVx2Ix4/5ZXLx4UcePH9eTTz7p%0AdpSE2LatWCzmdoyEXL58WW%2B88Ya2bt0qSZo1a5bS0tJcTpWYEydO6Ktf/eot17RMZWlpaZo9e7au%0AXr2q0dFRDQ0N6ctf/vJdj%2BE88QlEIhG98847Wr16tdtR4hKLxRQIBJSRkaFgMKicnBy3I8Xl2Wef%0A1YsvvmjsKaoej0elpaUqLCzUb37zG7fjxOW9997Tgw8%2BqK1bt6qgoEDbtm3T8PCw27EScuTIEW3e%0AvNntGI7Nnz9fP/nJT/TQQw/pK1/5itLT01VSUnLXYyjxu7hy5Yo2bNigffv2ae7cuW7HicuMGTPU%0A2dmpixcv6m9/%2B5taWlrcjuTYK6%2B8IsuytHz5ctm27ehc2ammtbVVHR0dOn78uH71q1/pzTffdDuS%0AY6Ojo%2Bro6NAzzzyjjo4OzZkzR6FQyO1YcRsZGdGxY8e0ceNGt6M4du7cOf3iF79QT0%2BP/vOf/%2BjK%0AlSv605/%2BdNdjKPHPMTo6qg0bNmjLli2qqKhwO07C0tLS9P3vf1%2BnTp1yO4pjra2tOnbsmJYsWaLN%0Amzfr5MmTevzxx92OFZdFixZJkrxer9avX6%2B2tjaXEzm3ePFiZWZmauXKlZKkDRs2qKOjw%2BVU8fvL%0AX/6iFStWyOv1uh3FsVOnTunRRx/VggULNHPmTP3whz/U3//%2B97sek9QSN3UXJUlPPPGEcnJytGPH%0ADrejxO3DDz/U4OCgJGl4eFivv/762IzfBLt379b58%2Bd17tw5vfzyyyouLtbvfvc7t2M5NjQ0pCtX%0ArkiSrl69qr/%2B9a/6%2Bte/7nIq5yzLUmZmps6ePStJam5uNm4cJ0kNDQ1GjVIkKSsrS2%2B99Zb%2B%2B9//%0AyrZtNTc3T3j9TcIX%2B0zkscceUzgc1kcffaSHHnpIL7zwwtgHJVNda2ur/vjHPyovL0%2BBQEAej0e7%0Ad%2B/Wd77zHbejOfLBBx%2Bourp67MO1LVu26Nvf/rbbsaaNvr4%2BrV%2B/Xh6PR6Ojo6qqqlJZWZnbseKy%0Af/9%2BVVVVaWRkREuWLNGhQ4fcjhSXoaEhnThxQr/%2B9a/djhKXZcuW6fHHH9eKFSs0c%2BZMBQIBbdu2%0A7a7HcLEPABiMmTgAGIwSBwCDUeIAYDBKHAAMRokDgMEocQAwGCUOAAajxAHAYP8P5caZIGvlDAQA%0AAAAASUVORK5CYII%3D%0A[]
+ * Conclusion
+   ** 고차원 다변량 모델은 저차원 다변량 모델과 관련해서 Overfit 되는 경향이 있음 (?)
+   ** 하지만 in-sample-error 와 out-of-sample-error 의 편차는 크지 않음 (?)
+   ** 모델의 복잡성이 증가하면 전체 분산이 커지게 됨
+
+ * Next steps
+   ** 다음 미션에서는 K-means clustering 에 대해서 학습
+
+== 활용 주요 function
+ * import pandas as pd
+ * from sklearn.linear_model import LinearRegression
+ * from sklearn.metrics import mean_squared_error
+
+ * function
+   ** lr = LinearRegression() : 선형 회귀 모델 설정
+   ** lr.fit(features, target) : 셋팅
+   ** predictions = lr.predict(features) : 예측
+   ** mean_squared_error(filtered_cars["mpg"], predictions) : mse 계산
+   ** np.var(predictions) : variance 계산
+   ** 튜플 형태로 리턴시 return(mse, variance)
+      *** cyl_mse, cyl_var = train_and_test(["cylinders"]) 의 형식으로 받을 수 있음
+      *** weight_mse, weight_var = train_and_test(["weight"]) 의 형식으로 받을 수 있음

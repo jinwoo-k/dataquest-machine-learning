@@ -180,6 +180,7 @@ visualize_clusters(point_guards, 5)
    ** 우리의 탐험은 각 플레이어의 Assist Turnover Ratio와 Points Per Game에 따라 5 가지 포인트 가드 감각을 얻는 데 도움이되었습니다.
    ** 다음 장에서는 Centroids 들을 사용하지 않고 데이터를 클러스터링하는 방법과 더 많은 Feature 를 사용하여 클러스터하는 방법에 대해 학습
    ** sklearn에서는 간단하게 K-means 를 구현해 주므로 많이 이용하자 !
+   ** image:./images/image15.png[] image:./images/image19.png[] image:./images/image20.png[]
    ** 참고 : https://ko.wikipedia.org/wiki/K-%ED%8F%89%EA%B7%A0_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
 
  * K-Means 특징

@@ -68,3 +68,4 @@
 ### Decision Trees
 
 * [https://www.dataquest.io/course/decision-trees](https://www.dataquest.io/course/decision-trees)
+* [mission2. Building a Decision Tree](https://github.com/jinwoo-k/dataquest-machine-learning/blob/master/wiki/6.Decision-Tree/mission2.asc)
